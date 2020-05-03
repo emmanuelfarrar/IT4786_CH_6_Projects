@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 <!--
-    Name:
-    Date:
-    Title:
-
-    Description:
-
-    Extra Info and Links:
-    Bootswatch: https://bootswatch.com/lux/ / https://bootswatch.com/
-    Jquery: https://jquery.com/
-    jQuery Mobile: https://jquerymobile.com/
-    Bootstrap: https://getbootstrap.com/
-    FontAwesome: https://fontawesome.com/ 
 -->
 <html>
 
@@ -27,7 +15,26 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/sectionFive.jscmd"></script>
+    <style>
+      #container {
+        margin: 5px;
+      }
+
+      #btnCam {
+        display: none;
+      }
+
+      #result {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+      }
+
+      #resultImg {
+        width: 100%;
+      }
+    </style>
     
     <title>Ch 6: Audio and Video</title>
 </head>
@@ -40,11 +47,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">6.1 - Playing Audio and Video<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="index.html">6.1 - Playing Audio and Video</a>
             <a class="nav-item nav-link" href="sectionTwo.html">6.2 - Controlling Media w/ JS</a>
             <a class="nav-item nav-link" href="sectionThree.html">6.3 - A Complete Music Player</a>
             <a class="nav-item nav-link" href="sectionFour.html">6.4 - Using the PhoneGap Media Object</a>
-            <a class="nav-item nav-link" href="sectionFive.html">6.5 - Using the Onboard Camera</a>
+            <a class="nav-item nav-link active" href="sectionFive.html">6.5 - Using the Onboard Camera<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </div>
         </div>
@@ -52,14 +59,11 @@
 
         
     <div id="container">
-        <h2>6.1 - Playing Audio and Video</h2>
-        <audio controls>
-            <source src="assets/03_pure_imagination.mp3">
-        </audio>
-        <video style="width: 100%;" controls>
-            <source src="assets/ordinalscale.mp4">
-        </video>
-        
+        <h2>6.5 - Using Onboard Camera</h2>
+        <button type="button" class="btn btn-outline-primary" onclick="takePic()" id="btnCam">Take Picture</button>
+        <div id='result' id>
+            <img id="resultImg"></img>
+        </div>
     </div><!--container-->
             
      
