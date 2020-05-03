@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+   
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/sectionThree.js"></script>
+    <style>
+        #btnPlay, #btnPause, #btnStop{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+    
+    <title>Ch 6: Audio and Video</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Ch 6: Audio and Video</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html">6.1 - Playing Audio and Video</a>
+            <a class="nav-item nav-link" href="sectionTwo.html">6.2 - Controlling Media w/ JS</a>
+            <a class="nav-item nav-link active" href="sectionThree.html">6.3 - A Complete Music Player<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </div>
+        </div>
+      </nav>
+
+        
+    <div id="container">
+        <h2>6.3 - Complete Music Player</h2>
+        <audio id="player">
+            <source src="assets/01_takeOnMe.mp3">
+        </audio>
+
+        <button type="button" class="btn btn-outline-primary" id="btnPlay">Play</button>
+        <button type="button" class="btn btn-outline-primary" id="btnPause">Pause</button>
+        <button type="button" class="btn btn-outline-primary" id="btnStop">Stop</button>
+        <label for="rngVolume">Volume</label>
+        <input type="range" id="rngVolume" min="0" max="1"step=".01" value=".5" 
+                data-highlight="true" onchange="changeVolume()" />
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Songs</li>
+            <li><a href="#" onclick="changeSong('01_takeOnMe')">Take On Me</a></li>
+            <li><a href="#" onclick="changeSong('02_Sanctuary')">Sanctuary</a></li>
+            <li><a href="#" onclick="changeSong('03_pure_imagination')">Pure Imagination</a></li>
+            <li><a href="#" onclick="changeSong('04_algorythm')">Algorythm</a></li>
+        </ul>
+        <div data-role="footer">
+            <output id="timeOut">Elapsed Time:</output>
+        </div>
+        
+    </div><!--container-->
+            
+     
+    <!-- <footer><p class="text-center">Copyright &copy; 2020, Emmanuel Farrar</p></footer> -->
+</body>
+
+</html>
